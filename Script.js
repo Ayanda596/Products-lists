@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Array of products
     const products = [
         { id: 1, name: "Iphone 15", price: 20000, image: "images/R (1).jfif", category: "cellphones", colors: ["Black", "White", "Blue"] },
         { id: 2, name: "Samsung S23", price: 15000, image: "images/purepng.com-samsung-phonesmartphoneandroidgooglephoneapplication-211519339028ghq1u.png", category: "cellphones", colors: ["Black", "White", "Green"] },
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderProducts(productsList) {
         const productContainer = document.getElementById('products');
         productContainer.innerHTML = productsList.map(product => {
+            // Get the current cart from localStorage
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const existingProduct = cart.find(item => item.id === product.id);
             const quantity = existingProduct ? existingProduct.quantity : 0;
@@ -46,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }).join('');
     }
 
-    // Function to filter products
+    // Function to filter products based on search query and price range
     function filterProducts() {
         const searchQuery = document.getElementById('search').value.toLowerCase();
         const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
@@ -71,12 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Event listeners for filters
+    // Event listeners for search input and price range filters
     document.getElementById('search').addEventListener('input', filterProducts);
     document.getElementById('min-price').addEventListener('input', filterProducts);
     document.getElementById('max-price').addEventListener('input', filterProducts);
 
-    // Event listener for adding items to cart
+    // Event listener for adding items to the cart
     document.getElementById('products').addEventListener('click', event => {
         if (event.target.classList.contains('add-to-cart')) {
             const id = parseInt(event.target.dataset.id, 10);
@@ -98,6 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initial render
+    // Initial render of products
     renderProducts(products);
 });

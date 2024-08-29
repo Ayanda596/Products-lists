@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Page</title>
+    <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-100">
@@ -12,10 +14,12 @@
     <!-- Header -->
     <header class="bg-blue-500 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo and Shop Name -->
             <a href="index.html" class="flex items-center">
                 <img src="images/677755-210axC1562182518.jpg" alt="MyCellPhoneShop Logo" class="h-8 mr-2">
                 <div class="text-xl font-bold">MyShop</div>
             </a>
+            <!-- Navigation Menu -->
             <nav>
                 <ul class="flex space-x-4">
                     <li><a href="index.html" class="hover:underline">Home</a></li>
@@ -28,13 +32,18 @@
 
     <!-- Main Content -->
     <main class="container mx-auto p-4">
+        <!-- Cart Items Section -->
         <section id="cart-items" class="mb-8">
-            <!-- Cart items will be dynamically inserted here -->
+            <!-- Cart items will be dynamically inserted here by JavaScript -->
         </section>
+
+        <!-- Total Cost Section -->
         <section class="bg-white p-4 rounded shadow">
             <h2 class="text-lg font-semibold mb-4">Total Cost</h2>
             <p id="total-cost" class="text-2xl font-bold">R0.00</p>
         </section>
+
+        <!-- Purchase Agreement Section -->
         <section class="bg-white p-4 rounded shadow mt-4">
             <h2 class="text-lg font-semibold mb-4">Purchase Agreement</h2>
             <label class="flex items-center">
