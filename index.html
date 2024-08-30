@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing Page</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-blue-500 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo and Shop Name -->
+            <a href="index.html" class="flex items-center">
+                <img src="images/677755-210axC1562182518.jpg" alt="MyCellPhoneShop Logo" class="h-8 mr-2">
+                <div class="text-xl font-bold">MyShop</div>
+            </a>
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="flex space-x-4 items-center">
+                    <!-- Navigation Links -->
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="cart.html" class="hover:underline relative">
+                        Cart
+                        <!-- Cart count indicator -->
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full px-2 py-1">0</span>
+                    </a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <section class="mb-8">
+            <!-- Page Heading -->
+            <h1 class="text-2xl font-bold mb-4">Welcome to MyShop</h1>
+            <div class="mb-4">
+                <!-- Category Tabs -->
+                <div class="flex space-x-4">
+                    <!-- Category Buttons -->
+                    <button data-category="cellphones" class="category-tab px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Cellphones</button>
+                    <button data-category="jerseys" class="category-tab px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Football Jerseys</button>
+                    <button data-category="cars" class="category-tab px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Cars</button>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row mb-4">
+                <!-- Filters Section -->
+                <div class="mb-4 md:mb-0 md:w-1/4 md:pr-4">
+                    <h2 class="text-lg font-semibold mb-2">Filters</h2>
+                    <!-- Search Filter -->
+                    <div class="mb-4">
+                        <label for="search" class="block text-left mb-2">Search by Name</label>
+                        <input type="text" id="search" class="w-full px-3 py-2 border border-gray-300 rounded" placeholder="Search...">
+                    </div>
+                    <!-- Price Range Filter -->
+                    <div>
+                        <label for="price-range" class="block text-left mb-2">Price Range</label>
+                        <input type="number" id="min-price" class="w-full px-3 py-2 border border-gray-300 rounded mb-2" placeholder="Min Price">
+                        <input type="number" id="max-price" class="w-full px-3 py-2 border border-gray-300 rounded" placeholder="Max Price">
+                    </div>
+                </div>
+                <!-- Product Listings Section -->
+                <div id="products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:w-3/4">
+                    <!-- Product items will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-blue-500 text-white text-center p-4">
+        <div class="container mx-auto">
+            <p>&copy; 2024 MyCellPhoneShop. All rights reserved.</p>
+            <!-- Contact Information -->
+            <p>Contact us: <a href="mailto:info@mycellphoneshop.com" class="underline">info@mycellphoneshop.com <br>079-824-2009</a></p>
+            
+            <!-- Contact Form -->
+            <form action="#" method="post" class="mt-8 max-w-lg mx-auto">
+                <h2 class="text-lg font-semibold mb-4">Get in Touch</h2>
+                <!-- Name Field -->
+                <div class="mb-4">
+                    <label for="name" class="block text-left mb-2">Name</label>
+                    <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded">
+                </div>
+                <!-- Email Field -->
+                <div class="mb-4">
+                    <label for="email" class="block text-left mb-2">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded">
+                </div>
+                <!-- Message Field -->
+                <div class="mb-4">
+                    <label for="message" class="block text-left mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded" style="color: black;"></textarea>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Send Message</button>
+            </form>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
